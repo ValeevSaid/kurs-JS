@@ -1,9 +1,26 @@
-let title;
-let screens;
-let screenPrice;
-let rollback;
-let pullPrice;
-let adaprive;
+let title = "Урок 2";
+let screens = "Простые, Сложные, Интерактивные";
+let screenPrice = 10000;
+let rollback = 20;
+let fullPrice = 1000000;
+let adaptive = true;
 
-alert("Любой текст");
-console.log("Другой текст");
+// Вывести в консоль тип данных значений переменных title, fullPrice, adaptive;
+console.log(typeof title);
+console.log(typeof fullPrice);
+console.log(typeof adaptive);
+
+// Вывести в консоль длину строки screens
+console.log(screens.length);
+
+// Вывести в консоль “Стоимость верстки экранов (screenPrice) рублей/ долларов/гривен/юани” и “Стоимость разработки сайта (fullPrice) рублей/ долларов/гривен/юани”
+console.log("Стоимость верстки экранов " + screenPrice + " рублей");
+console.log("Стоимость разработки сайта  " + fullPrice + " рублей");
+
+// Привести строку screens к нижнему регистру и разбить строку на массив, вывести массив в консоль
+console.log(screens.toLowerCase());
+console.log(screens.split(", "));
+
+// Вывести в консоль Процент отката посреднику за работу (fullPrice * (rollback/100))
+
+console.log(fullPrice * (rollback / 100));
