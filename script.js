@@ -13,7 +13,7 @@ let servicePrice1 = +prompt("Какой бюджет на это?");
 let service2 = prompt("Какой нужен допольнительный функционал сайта?");
 let servicePrice2 = +prompt("Какой бюджет на это?");
 fullPrice = screenPrice + servicePrice1 + servicePrice2;
-let servicePercentPrice = fullPrice - fullPrice * (rollback / 100);
+
 const showTypeOf = function (variable) {
   console.log(variable, typeof variable);
 };
@@ -28,6 +28,8 @@ function getFullPrice() {
   return screenPrice + allServicePrices;
 }
 
+fullPrice = getFullPrice();
+
 const getTitle = function (text) {
   text = text.trim();
   text = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
@@ -35,9 +37,9 @@ const getTitle = function (text) {
 };
 
 function getServicePercentPrices() {
-  return getFullPrice() - servicePercentPrice;
+  return fullPrice - fullPrice * (rollback / 100);
 }
-servicePercentPrice = getServicePercentPrices();
+let servicePercentPrice = getServicePercentPrices();
 const getRollbackMessage = function (price) {
   if (price >= 30000) {
     return "Даем скидку в 10%";
