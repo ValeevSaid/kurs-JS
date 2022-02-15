@@ -67,5 +67,6 @@ showTypeOf(screenPrice);
 showTypeOf(adaptive);
 
 console.log(getRollbackMessage(fullPrice));
-console.log("Сумма допуслуг=" + allServicePrices);
-console.log("Верстка с допуслугами=" + getFullPrice);
+console.log("Сумма допуслуг=" + allServicePrices());
+console.log("Верстка с допуслугами=" + getFullPrice());
+console.log("Название проект=" + getTitle());
