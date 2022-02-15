@@ -14,7 +14,6 @@ let service1 = prompt("Какой нужен допольнительный фу
 let servicePrice1 = +prompt("Какой бюджет на это?");
 let service2 = prompt("Какой нужен допольнительный функционал сайта?");
 let servicePrice2 = +prompt("Какой бюджет на это?");
-fullPrice = screenPrice + servicePrice1 + servicePrice2;
 
 const showTypeOf = function (variable) {
   console.log(variable, typeof variable);
@@ -30,7 +29,7 @@ function getFullPrice() {
   return screenPrice + allServicePrices;
 }
 
-fullPrice = getFullPrice();
+let fullPrice = getFullPrice();
 
 const getTitle = function (text) {
   text = text.trim();
