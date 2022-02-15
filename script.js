@@ -18,23 +18,26 @@ const showTypeOf = function (variable) {
   console.log(variable, typeof variable);
 };
 
-const allServicePrices = function getAllServicePrices() {
-  return servicePrice1 + servicePrice2;
+const getAllServicePrices = function (a, b) {
+  return a + b;
 };
+
+let allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
 
 function getFullPrice() {
   return screenPrice + allServicePrices;
 }
 
-const getTitle = function (title) {
-  if (!title) return title;
-  return title[0].toUpperCase() + title.slice(1);
+const getTitle = function (text) {
+  text = text.trim();
+  text = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  return text;
 };
 
-servicePercentPrice = function getServicePercentPrices() {
+function getServicePercentPrices() {
   return getFullPrice() - servicePercentPrice;
-};
-
+}
+servicePercentPrice = getServicePercentPrices();
 const getRollbackMessage = function (price) {
   if (price >= 30000) {
     return "Даем скидку в 10%";
@@ -45,28 +48,14 @@ const getRollbackMessage = function (price) {
   } else {
     return "Что то пошло не так";
   }
-
-  // switch (true) {
-  //   case fullPrice >= 30000:
-  //     console.log("Даем скидку в 10%");
-  //     break;
-  //   case fullPrice >= 15000 && fullPrice <= 30000:
-  //     console.log("Даем скидку в 5%");
-  //     break;
-  //   case fullPrice < 15000 && fullPrice >= 0:
-  //     console.log("Скидка не предусмотрена");
-  //     break;
-  //   default:
-  //     console.log("Что то пошло не так");
-  //     break;
-  // }
 };
 
 showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
-
+console.log("Тип экрана = " + screens);
 console.log(getRollbackMessage(fullPrice));
-console.log("Сумма допуслуг=" + allServicePrices());
-console.log("Верстка с допуслугами=" + getFullPrice());
-console.log("Название проект=" + getTitle());
+console.log("Сумма допуслуг = " + allServicePrices);
+console.log("Верстка с допуслугами = " + getFullPrice());
+console.log("Название проект = " + getTitle(title));
+console.log("Итоговая цена = " + servicePercentPrice);
