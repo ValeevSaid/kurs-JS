@@ -1,4 +1,5 @@
 "use strict";
+title = prompt("Как называется ваш проект");
 
 let title = "Урок 2";
 let screens = "Простые, Сложные, Интерактивные";
@@ -7,7 +8,6 @@ let rollback = 20;
 let fullPrice = 1000000;
 let adaptive = true;
 
-title = prompt("Как называется ваш проект");
 console.log(typeof title);
 console.log(typeof fullPrice);
 console.log(typeof adaptive);
