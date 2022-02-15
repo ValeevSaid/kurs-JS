@@ -17,7 +17,7 @@ let service2 = prompt("Какой дополнительный тип услуг
 let servicePrice2 = +prompt("Сколько это будет стоить?");
 
 fullPrice = screenPrice + servicePrice1 + servicePrice2;
-
+// изменения
 let servicePercentPrice = fullPrice - fullPrice * (rollback / 100);
 
 switch (true) {
