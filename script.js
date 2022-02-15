@@ -7,6 +7,11 @@ let screenPrice = 10000;
 let rollback = 20;
 let fullPrice = 1000000;
 let adaptive = true;
+let service1 = prompt("Нужен счетчик посещаемости??");
+let servicePrice1 = +prompt("Цена");
+let service2 = prompt("Нужны кнопки соцсетей??");
+let servicePrice2 = +prompt("Цена??");
+let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
 
 console.log(typeof title);
 console.log(typeof fullPrice);
@@ -27,19 +32,10 @@ screenPrice = +prompt("Сколько будет стоить данная ра�
 console.log("Стоимость работы: " + screenPrice);
 adaptive = confirm("Нужен ли адаптив на сайте??");
 console.log("Адаптив: " + adaptive);
-
-let service1 = prompt("Нужен счетчик посещаемости??");
-let servicePrice1 = +prompt("Цена");
-let service2 = prompt("Нужны кнопки соцсетей??");
-let servicePrice2 = +prompt("Цена??");
 console.log("Счетчик " + servicePrice1 + " Соцсети " + servicePrice2);
-
 fullPrice = screenPrice + servicePrice1 + servicePrice2;
 console.log("Полная цена проекта: " + fullPrice);
-
-let servicePercentPrice = Math.ceil(fullPrice * (rollback / 100));
 console.log("Итоговая стоимость: " + servicePercentPrice);
-
 console.log(typeof fullPrice);
 switch (true) {
   case fullPrice >= 30000:
