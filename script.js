@@ -25,7 +25,7 @@ const asking = function () {
     "Простые, Сложные, Интерактивные"
   );
   do {
-    screenPrice = +prompt("Сколько будет стоить данная работа?");
+    screenPrice = prompt("Сколько будет стоить данная работа?");
   } while (!isNumber(screenPrice));
 
   adaptive = confirm("Нужен ли адаптив на сайте?");
@@ -46,9 +46,6 @@ const getAllServicePrices = function (a, b) {
     do {
       sum += +prompt("Какой бюджет на это?");
     } while (!isNumber(sum));
-    {
-      return sum;
-    }
   }
   return sum;
 };
