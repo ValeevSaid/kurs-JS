@@ -38,20 +38,22 @@ const showTypeOf = function (variable) {
 const getAllServicePrices = function (a, b) {
   let sum = 0;
   for (let i = 0; i < 2; i++) {
+    let price = 0;
     if (i === 0) {
       service1 = prompt("Какой нужен допольнительный функционал сайта 1?");
     } else if (i === 1) {
       service2 = prompt("Какой нужен допольнительный функционал сайта 2?");
     }
     do {
-      sum += +prompt("Какой бюджет на это?");
-    } while (!isNumber(sum));
+      price = prompt("Какой бюджет на это?");
+    } while (!isNumber(price));
+    sum += +price;
   }
   return sum;
 };
 
 function getFullPrice() {
-  return screenPrice + allServicePrices;
+  return +screenPrice + allServicePrices;
 }
 
 const getTitle = function (text) {
@@ -85,6 +87,9 @@ title = getTitle(title);
 showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
+showTypeOf(fullPrice);
+showTypeOf(allServicePrices);
+showTypeOf(servicePercentPrice);
 
 console.log("Тип экрана = " + screens);
 console.log(getRollbackMessage(fullPrice));
