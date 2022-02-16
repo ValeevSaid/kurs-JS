@@ -29,7 +29,7 @@ function getFullPrice() {
   return screenPrice + allServicePrices;
 }
 
-let fullPrice = getFullPrice();
+fullPrice = getFullPrice();
 
 const getTitle = function (text) {
   text = text.trim();
