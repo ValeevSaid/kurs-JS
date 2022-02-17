@@ -1,30 +1,46 @@
 "use strict";
 
+let random;
+let userAnswer;
 function getRandomInt() {
-  return Math.floor(Math.random() * 100) + 1;
+  random = Math.floor(Math.random() * 100) + 1;
+  return random;
+}
+random = getRandomInt();
+
+console.log(random);
+
+function isNumber(num) {
+  if (!isNaN(parseFloat(num)) && isFinite(num)) {
+    bot(random);
+  } else {
+    question();
+  }
 }
 
-let random = getRandomInt();
-console.log(random);
-const isNumber = function (num) {
-  return !isNaN(parseFloat(num)) && isFinite(num);
-};
+function question() {
+  userAnswer = +prompt("Угадай число от 1 до 100");
+  if (userAnswer === null) {
+    alert("Игра окончена");
+    return;
+  } else {
+    return userAnswer;
+  }
+}
 
 function bot(x) {
-  let userAnswer = prompt("Угадай число от 1 до 100");
-
-  if (+userAnswer == null) {
-    alert("Игра окончена");
-  } else if (!isNumber(+userAnswer)) {
-    userAnswer += +prompt("Введите число");
-  } else if (+userAnswer < x) {
-    userAnswer += +prompt("Загаданное число больше");
-  } else if (+userAnswer > x) {
-    userAnswer += +prompt("Загаданное число меньше!");
-  } else if (+userAnswer === x) {
-    alert("Поздравляю, Вы угадали!!!");
+  if (userAnswer < x) {
+    userAnswer = +prompt("Загаданное число больше");
+    bot();
+  } else if (userAnswer > x) {
+    userAnswer = +prompt("Загаданное число меньше!");
+    bot();
   }
-  bot(x);
+  if (userAnswer === x) {
+    alert("Поздравляю, Вы угадали!!!");
+    return;
+  }
 }
-
-bot(random);
+question();
+isNumber(userAnswer);
+console.log(userAnswer, typeof userAnswer);
