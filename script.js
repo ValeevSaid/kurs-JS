@@ -35,5 +35,6 @@ function bot() {
   bot();
 }
 
+getRandomInt();
 bot();
 console.log(random);
