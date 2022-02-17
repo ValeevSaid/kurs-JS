@@ -1,7 +1,6 @@
 "use strict";
 
 let random;
-let userAnswer;
 
 function getRandomInt() {
   random = Math.floor(Math.random() * 100) + 1;
