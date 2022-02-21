@@ -2,7 +2,7 @@
 
 const appData = {
   title: "",
-  screens: {},
+  screens: [],
   screenPrice: 0,
   adaptive: true,
   rollback: 10,
@@ -32,11 +32,9 @@ const appData = {
     // } while (!appData.isNumber(appData.screenPrice));
 
     for (let i = 0; i < 2; i++) {
-      let name = prompt(
-        "Какие типы экранов нужно разработать?",
-        "Простые, Сложные, Интерактивные"
-      );
+      let name = prompt("Какие типы экранов нужно разработать?");
       let price = 0;
+
       do {
         price = prompt("Сколько будет стоить данная работа?");
       } while (!appData.isNumber(price));
@@ -91,6 +89,9 @@ const appData = {
   },
 
   logger: function () {
+    console.log(appData.fullPrice);
+    console.log(appData.servicePercentPrice);
+    console.log(appData.screens);
     appData.showTypeOf(appData.title);
     appData.showTypeOf(appData.screenPrice);
     appData.showTypeOf(appData.adaptive);
